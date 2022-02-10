@@ -1,0 +1,139 @@
+---
+title: "STA130 -- Winter 2022"
+author: "N. Moon & S. Caetano & Your Name and Student Number"
+subtitle: Week 6 Problem Set
+output:
+  pdf_document: default
+---
+
+```{r, echo=FALSE, include=FALSE}
+library(tidyverse)
+library(knitr)
+
+opts_chunk$set(warning = FALSE, message = FALSE)
+```
+
+# Instructions
+
+## How do I hand in these problems for the Thursday deadline?
+
+Your complete .Rmd file that you create for these practice problems AND the resulting .pdf (i.e., the one you 'Knit to PDF' from your .Rmd file) must be uploaded into a Quercus assignment (link: [https://q.utoronto.ca/courses/253019/assignments/801360](https://q.utoronto.ca/courses/253019/assignments/801360) by 11:59 a.m. ET (midday Toronto time) on Thursday, February 17, 2022. Late problem sets or problems submitted another way (e.g., by email) are *not* accepted.
+
+
+# Problem set grading
+
+There are two parts to your problem set. Part one is R based: there is one mandatory question in part one, and additional optional questions. Optional R based questions are highly recommended as they will help prepare you for larger assessments (and help improve your R skills, of course!); but, they are *not* part of the grading for the weekly problem sets. Part two is (more) writing based: all of part two is mandatory. We recommend you use a word processing software like Microsoft Word to check for grammar errors in your written work. Note: there can be issues copying from Word to R Markdown so it may be easier to write in this file first and then copy the text to Word. Then you can make any changes flagged in Word directly in this file.
+  
+\newpage 
+
+# Part 1
+
+## Question 1 [Required]
+
+In this question, you will explore data about whether countries (or sub regions) have their road conditions set that vehicles drive on the left or right side of the road (link: [https://www.worldstandards.eu/cars/list-of-left-driving-countries/](https://www.worldstandards.eu/cars/list-of-left-driving-countries/)).
+
+Here we can see that there are 270 countries (or states/territories) and 86 of them drive on the left side of the road. Note: this is data that covers all regions in the world.
+
+Here is a data frame with the data from the driving study:
+```{r}
+# Create a data frame
+road_side <- c( rep("left", 86), rep("right", 270-86) )
+roaddata <- tibble(road_side)
+```
+
+### (a) Are the observations in `roaddata` the entire population or a sample from a population?
+
+
+### (b) Use the `sample_n()` function to select a random sample of different 100 countries/regions. Call this new data `road_sample`. Set the seed as the last *three* digits of your student number.
+
+```{r}
+set.seed(123)
+
+```
+
+### (c) Using the `road_sample` sample you created in (b), simulate 2000 bootstrap samples and calculate the proportion of countries who drive on the left in each of these bootstrap samples. Produce a histogram of the bootstrap sampling distribution of the proportion of regions that drive on the left side. Set the seed as the last *three* digits of your student number.
+
+```{r}
+
+```
+
+### (d) Calculate a 90% confidence interval for the proportion of countries/regions which drive on the left based on the bootstrap sampling distribution you generated in (c).
+
+```{r}
+
+```
+
+
+### (e) Indicate whether or not each of the following statements is a correct interpretation of the confidence interval constructed in part (d) and justify your answers. (Let's assume the CI was (27%, 44%).) Note: your confidence may well be different from this since we are all using different random seeds in earlier parts of this question.
+
+  (i) We are 90% confident that between 27% and 44% of countries/regions in our sample from (b) drive on the left side.
+  
+  (ii) There is a 90% chance that between 27% and 44% of all countries in the population drive on the left side. 
+
+  (iii) If we considered many random samples of 100 countries/regions, and we calculated 90% confidence intervals for each sample, 90% of these confidence intervals will include the true proportion of countries/regions in the population who drive on the left side of the road.
+
+### (f) If we want to be *more* confident about capturing the proportion of all countries who drive on the left side, should we use a *wider* confidence level or a *narrower* confidence level? Explain your answer.  
+
+
+### (g) We could carry out an hypothesis test to investigate whether or not countries are equally likely to drive on the right or to the left side of the road.  Our hypotheses would be:
+
+\newpage
+
+## Question 2 [Optional]
+
+The data set `auto_claims.csv` includes claims paid (in USD) to a sample of auto insurance claimants 50 years of age and older in a specific year. In other words, it represents a 'sample' (the 'original sample') of car insurance claims in that year.  
+
+### (a)  Produce appropriate data summaries (i.e. a summary table and relevant visualization) of paid claims (`PAID`) and comment the shape, centre and spread of this distribution. 
+
+```{r}
+
+```
+
+### (b)  Estimate the sampling distributions of sample *median* of paid claims by taking 1000 samples of size n=500 (to match the sample size in the data) and produce appropriate data summaries. Set the seed as the last *four* digits of your student number for each set of simulations.
+
+```{r}
+
+
+```
+
+
+### (c) Using the simulation in part (b) derive a 95% confidence interval for the median of paid claims. 
+
+```{r}
+
+```
+
+
+\newpage 
+ 
+# Part 2 [Required]
+ 
+You are once again chatting on the phone to your friend. Your friend enjoyed your previous conversation about data visualization so much that your friend asked you if you had learned anything new in your STA130 course. You decided to tell them about the fancy new technique you just learned: bootstrapping! Be sure to include at least 2 vocabulary words from this week and explain them in simple terms for a lay audience.     
+
+
+ 
+*Other things to consider:* 
+- Try to not spend more than 20 minutes on the prompt.     
+- Aim for more than 200 but less than 400 words.   
+- Remember to include a conclusion that reiterates the key points your friend should understand about bootstrapping.   
+- Use full sentences.    
+- Grammar is not the main focus of this assessment, but it is important that you communicate in a clear and professional manner (i.e., no slang or emojis should appear).  
+ 
+*Vocabulary* 
+ 
+- Parameter  
+- Statistic  
+- Population  
+- Sample  
+- Sampling distribution  
+- Random sampling  
+- Resampling  
+- Bootstrap  
+- Percentile (quantile)  
+- Confidence interval  
+- Confidence level  
+- Testing  
+- Estimation  
+- Representative 
+
+
